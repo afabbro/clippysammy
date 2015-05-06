@@ -22,12 +22,12 @@ javascript:
 
         document.getElementById('appendedInput').onblur = function(event){
                 dropletName = document.getElementById('appendedInput').value;
+                console.log('Droplet Name: '+dropletName);
         };
         // Detect Droplet size change
-        var sizes = document.getElementsByName('droplet_create[size_id]');
-        for (i = 0; i < sizes.length; i++) {
-                this.onchange = function(event){
-                    // Droplet size selection changed
+
+                document.getElementById('size').onclick = function(event){
+
                     var dropSizeVal = document.querySelector('input[name="droplet_create[size_id]"]:checked').value;
                     if (dropSizeVal == '66') {
                         //code
@@ -57,8 +57,11 @@ javascript:
                     else if (dropSizeVal == '69') {
                         dropletSize = '64GB';
                     }
+                    
+                    console.log('Size Selected: '+dropletSize);
+                    
                 }
-        }
+        
 })()
 
  
