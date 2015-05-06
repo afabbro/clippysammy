@@ -8,13 +8,13 @@ javascript:
 	// 	alert(element.textContent);
 	// }	
 
-	var helpButton = document.getElementById('ember371');
-	helpButton.onmouseover = function (event) {
-		event = event || window.event;
-		var element = event.target || event.srcElement;
+	document.getElementById('ember371').onmouseover = function (event) {
 		alert("mouse'd over ? button");
 	};
 
+  document.getElementById('appendedInput').onblur = function(event){
+    var dropName = document.getElementById('appendedInput').value;
+  };
 })()
 
  
