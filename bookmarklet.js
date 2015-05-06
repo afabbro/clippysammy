@@ -107,7 +107,16 @@ javascript:
 
                 });
             
+            $('#images-freebsd').click(function(){
+                console.log('FreeBSD');
+            });
+            $('#image_6423475').click(function(){
+               console.log('Wordpress'); 
+            });
             
+            $('#create-btn').click(function(){
+               checkStatus(); 
+            });
 
         
 })()
