@@ -11,54 +11,65 @@ javascript:
 	// 	alert(element.textContent);
 	// }	
 
-	function displaySammy(helpMessages){
+	function displaySammy(helpMessages, sammyImgUrl){
 		// display sample donut until we have a sammy
-		document.body.innerHTML += "<img src='http://37.media.tumblr.com/5462ca98ac502326aa20a82becba98b0/tumblr_mpexliKgpd1sn8q7mo1_500.png' style='position: fixed; right: 25px; top: 25px; z-index: 999999'>"
+		var helpMessageHTML = 
+		"<div id='helpMessageHTML' style='position: fixed; left: 30px; background: yellow; border-radius: 5px; border: 1px solid black;'>"
+		+= "<div id='question'>Why shark not have ears?</div>"
+		+= "<div id='option1'>Because</div>"
+		+= "<div id='option2'>Obviously</div>"
+		+= "<button>Hi</button>";
+
+		var sammyImgTag = "<img src='" + sammyImgUrl + "' style='position: fixed; right: 25px; top: 25px; z-index: 999999'>"
+		var finalHTML = helpMessageHTML + sammyImgTag;
+		document.body.innerHTML += finalHTML;
 	};
 
 	document.getElementById('ember371').onmouseover = function(event) {
 		displaySammy();
 	};
 
-        document.getElementById('appendedInput').onblur = function(event){
-                dropletName = document.getElementById('appendedInput').value;
-        };
-        // Detect Droplet size change
-        var sizes = document.getElementsByName('droplet_create[size_id]');
-        for (i = 0; i < sizes.length; i++) {
-                this.onchange = function(event){
-                    // Droplet size selection changed
-                    var dropSizeVal = document.querySelector('input[name="droplet_create[size_id]"]:checked').value;
-                    if (dropSizeVal == '66') {
-                        //code
-                        dropletSize = '512MB';
-                    }
-                    else if (dropSizeVal == '63') {
-                        dropletSize = '1GB';
-                    }
-                    else if (dropSizeVal == '62') {
-                        dropletSize = '2GB';
-                    }
-                    else if (dropSizeVal == '64') {
-                        dropletSize = '4GB';
-                    }
-                    else if (dropSizeVal == '65') {
-                        dropletSize = '8GB';
-                    }
-                    else if (dropSizeVal == '61') {
-                        dropletSize = '16GB';
-                    }
-                    else if (dropSizeVal == '60') {
-                        dropletSize = '32GB';
-                    }
-                    else if (dropSizeVal == '70') {
-                        dropletSize = '48GB';
-                    }
-                    else if (dropSizeVal == '69') {
-                        dropletSize = '64GB';
-                    }
-                }
-        }
+  document.getElementById('appendedInput').onblur = function(event){
+          dropletName = document.getElementById('appendedInput').value;
+  };
+
+  // Detect Droplet size change
+  var sizes = document.getElementsByName('droplet_create[size_id]');
+  for (i = 0; i < sizes.length; i++) {
+    this.onchange = function(event){
+      // Droplet size selection changed
+      var dropSizeVal = document.querySelector('input[name="droplet_create[size_id]"]:checked').value;
+      if (dropSizeVal == '66') {
+          //code
+          dropletSize = '512MB';
+      }
+      else if (dropSizeVal == '63') {
+          dropletSize = '1GB';
+      }
+      else if (dropSizeVal == '62') {
+          dropletSize = '2GB';
+      }
+      else if (dropSizeVal == '64') {
+          dropletSize = '4GB';
+      }
+      else if (dropSizeVal == '65') {
+          dropletSize = '8GB';
+      }
+      else if (dropSizeVal == '61') {
+          dropletSize = '16GB';
+      }
+      else if (dropSizeVal == '60') {
+          dropletSize = '32GB';
+      }
+      else if (dropSizeVal == '70') {
+          dropletSize = '48GB';
+      }
+      else if (dropSizeVal == '69') {
+          dropletSize = '64GB';
+      }
+    } 
+  }
+
 })()
 
  
