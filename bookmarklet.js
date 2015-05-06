@@ -22,7 +22,7 @@ javascript:
         };
 
 	document.getElementById('ember371').onmouseover = function(event) {
-		displaySammy();
+		displaySammy(1);
 	};
 
         document.getElementById('appendedInput').onblur = function(event){
@@ -58,9 +58,11 @@ javascript:
                     }
                     else if (dropSizeVal == '70') {
                         dropletSize = '48GB';
+                        displaySammy(2);
                     }
                     else if (dropSizeVal == '69') {
                         dropletSize = '64GB';
+                        displaySammy(2);
                     }
                     
                     console.log('Size Selected: '+dropletSize);
@@ -109,15 +111,21 @@ javascript:
             
             $('#images-freebsd').click(function(){
                 console.log('FreeBSD');
+                displaySammy(4);
             });
             $('#image_6423475').click(function(){
-               console.log('Wordpress'); 
+               console.log('Wordpress');
+               if (dropletSize == '512MB') {
+                 displaySammy(0);
+               }
             });
             
             $('#create-btn').click(function(){
                checkStatus(); 
             });
-
+            $('.feedback').mouseover(function(){
+                displaySammy(3);
+            });
         
 })()
 
