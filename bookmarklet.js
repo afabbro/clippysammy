@@ -55,13 +55,15 @@ javascript:
 
 		// add click handler to newly minted buttonfriend
     $('#dismiss').click(function(){
-       displaySammy()
+       displaySammy();
     });
 	};
 
 	function dismissSammy(){
 		var sammy = $('#clippySammy');
     var halp = $('#helpMessageHTML');
+    console.log(sammy);
+    console.log(halp);
     if (sammy && halp) {
     	$('#clippySammy').remove();
     	$('#helpMessageHTML').remove();
