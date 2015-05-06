@@ -45,8 +45,8 @@ javascript:
 		var helpMessageHTML = 
 		 "<div id='helpMessageHTML' style=' line-height:24px; position: fixed; top: 30px; right:450px; z-index:99999; background: #fffba8; padding:7px; border-radius: 5px; border: 1px solid black;'>"
 		+ "<div id='question'>" + helpMessage[0] + "</div>"
-		+ "<div id='option1'>" + helpMessage[1] + "</div>"
-		+ "<div id='option2'>" + helpMessage[2] + "</div>"
+		+ "<div id='option1'><ul><li>" + helpMessage[1] + "</li></ul></div>"
+		+ "<div id='option2'><ul><li>" + helpMessage[2] + "</li></ul></div>"
 		+ "<button id='dismiss' style='padding:5px;'>" + helpMessage[3] + "</button>";
 
 		var sammyImgTag = "<img src='" + sammyImgUrl + "' id='clippySammy' style='position: fixed; right: 25px; top: 25px; z-index: 999999;'>";
