@@ -68,7 +68,7 @@ javascript:
   };
 
 	document.getElementById('ember371').onmouseover = function(event) {
-		displaySammy();
+		displaySammy(1);
 	};
 
 	document.getElementById('appendedInput').onblur = function(event){
@@ -79,82 +79,96 @@ javascript:
 
 	document.getElementById('size').onclick = function(event){
 
-  var dropSizeVal = document.querySelector('input[name="droplet_create[size_id]"]:checked').value;
-  if (dropSizeVal == '66') {
-      //code
-      dropletSize = '512MB';
-  }
-  else if (dropSizeVal == '63') {
-      dropletSize = '1GB';
-  }
-  else if (dropSizeVal == '62') {
-      dropletSize = '2GB';
-  }
-  else if (dropSizeVal == '64') {
-      dropletSize = '4GB';
-  }
-  else if (dropSizeVal == '65') {
-      dropletSize = '8GB';
-  }
-  else if (dropSizeVal == '61') {
-      dropletSize = '16GB';
-  }
-  else if (dropSizeVal == '60') {
-      dropletSize = '32GB';
-  }
-  else if (dropSizeVal == '70') {
-      dropletSize = '48GB';
-  }
-  else if (dropSizeVal == '69') {
-      dropletSize = '64GB';
-  }
-  
-  console.log('Size Selected: '+dropletSize);
-	    
-	};
+                    var dropSizeVal = document.querySelector('input[name="droplet_create[size_id]"]:checked').value;
+                    if (dropSizeVal == '66') {
+                        //code
+                        dropletSize = '512MB';
+                    }
+                    else if (dropSizeVal == '63') {
+                        dropletSize = '1GB';
+                    }
+                    else if (dropSizeVal == '62') {
+                        dropletSize = '2GB';
+                    }
+                    else if (dropSizeVal == '64') {
+                        dropletSize = '4GB';
+                    }
+                    else if (dropSizeVal == '65') {
+                        dropletSize = '8GB';
+                    }
+                    else if (dropSizeVal == '61') {
+                        dropletSize = '16GB';
+                    }
+                    else if (dropSizeVal == '60') {
+                        dropletSize = '32GB';
+                    }
+                    else if (dropSizeVal == '70') {
+                        dropletSize = '48GB';
+                        displaySammy(2);
+                    }
+                    else if (dropSizeVal == '69') {
+                        dropletSize = '64GB';
+                        displaySammy(2);
+                    }
+                    
+                    console.log('Size Selected: '+dropletSize);
+                    
+                };
+                
+                $('#regions').click(function(){
+                    if ($('#region-nyc').hasClass("selected")) {
+                        if (dropletRegion != 'NYC') {
+                            console.log('NYC');
+                            dropletRegion = 'NYC';
+                        }
+                        
+                    }
+                   else if ($('#region-sfo').hasClass("selected")) {
+                        if (dropletRegion != 'SFO') {
+                            console.log('SFO');
+                            dropletRegion = 'SFO';
+                        }
+                    }
+                   else if ($('#region-sgp').hasClass("selected")) {
+                        if (dropletRegion != 'SGP') {
+                            console.log('SGP');
+                            dropletRegion = 'SGP';
+                        }
+                    }
+                   else if ($('#region-lon').hasClass("selected")) {
+                        console.log('LON Selected');
+                        dropletRegion = 'LON';
+                    }
+                   else if ($('#region-ams').hasClass("selected")) {
+                        if (dropletRegion != 'AMS') {
+                            console.log('AMS');
+                            dropletRegion = 'AMS';
+                        }
+                    }
 
 	// lolol we could have been using jQuery all along lol what
 
-	$('#regions').click(function(){
-	    if ($('#region-nyc').hasClass("selected")) {
-	        if (dropletRegion != 'NYC') {
-	            console.log('NYC');
-	            dropletRegion = 'NYC';
-	        }
-	        
-	    }
-	   else if ($('#region-sfo').hasClass("selected")) {
-	        if (dropletRegion != 'SFO') {
-	            console.log('SFO');
-	            dropletRegion = 'SFO';
-	        }
-	    }
-	   else if ($('#region-sgp').hasClass("selected")) {
-	        if (dropletRegion != 'SGP') {
-	            console.log('SGP');
-	            dropletRegion = 'SGP';
-	        }
-	    }
-	   else if ($('#region-lon').hasClass("selected")) {
-	        console.log('LON Selected');
-	        dropletRegion = 'LON';
-	    }
-	   else if ($('#region-ams').hasClass("selected")) {
-	        if (dropletRegion != 'AMS') {
-	            console.log('AMS');
-	            dropletRegion = 'AMS';
-	        }
-	    }
 
-	   else if ($('#region-fra').hasClass("selected")) {
-	        if (dropletRegion != 'FRA') {
-	            console.log('FRA');
-	            dropletRegion = 'FRA';
-	        }
-	    }
-
-	});
-
+                });
+            
+            $('#images-freebsd').click(function(){
+                console.log('FreeBSD');
+                displaySammy(4);
+            });
+            $('#image_6423475').click(function(){
+               console.log('Wordpress');
+               if (dropletSize == '512MB') {
+                 displaySammy(0);
+               }
+            });
+            
+            $('#create-btn').click(function(){
+               checkStatus(); 
+            });
+            $('.feedback').mouseover(function(){
+                displaySammy(3);
+            });
+        
 })()
 
  
