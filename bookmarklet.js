@@ -15,36 +15,35 @@ javascript:
     	helpMessage[1] = "Set up Wordpress on a 1gb droplet";
     	helpMessage[2] = "I am a monster and don't care";
     	helpMessage[3] = "#YOLO";
-    	sammyImgUrl = "https://www.dropbox.com/sh/bhwdrskdozet760/AAAbHOMXnGQMY90hNWa9DIJla/Sammy-Idle_1.gif";
+    	sammyImgUrl = "http://i.imgur.com/KgGBUng.gif";
     } else if (helpMessageIdentifier === 1) {
     	helpMessage[0] = "It looks like you're trying to ask for help, why don't you talk to me?";
     	helpMessage[1] = "Continue contacting customer support";
     	helpMessage[2] = "Feel guilty for snubbing a cartoon shark";
     	helpMessage[3] = "Answer my question already!";
-    	sammyImgUrl = "https://www.dropbox.com/sh/bhwdrskdozet760/AAAB_OHq0XqOD-bmeO8DADQca/Support-Sammy.png";
+    	sammyImgUrl = "http://i.imgur.com/bEg5lag.png";
     } else if (helpMessageIdentifier === 2) { 
     	helpMessage[0] = "It looks like you are trying to create a very large droplet";
     	helpMessage[1] = "I've got money to burn";
     	helpMessage[2] = "Not my credit card";
     	helpMessage[3] = "MAKE IT RAIIIIN";
-    	sammyImgUrl = "https://www.dropbox.com/sh/bhwdrskdozet760/AAAbHOMXnGQMY90hNWa9DIJla/Sammy-Idle_1.gif";
+    	sammyImgUrl = "http://i.imgur.com/KgGBUng.gif";
     } else if (helpMessageIdentifier === 3) {
     	helpMessage[0] = "It looks like you are trying to give DigitalOcean feedback, would you like to tell me your ~feelings~?";
     	helpMessage[1] = "Yes please I have many feelings";
     	helpMessage[2] = "I am a robot/Not Applicable";
     	helpMessage[3] = "Express Self";
-    	sammyImgUrl = "https://www.dropbox.com/sh/bhwdrskdozet760/AAAbHOMXnGQMY90hNWa9DIJla/Sammy-Idle_1.gif";
+    	sammyImgUrl = "http://i.imgur.com/KgGBUng.gif";
     } else if (helpMessageIdentifier === 4) {
     	helpMessage[0] = "It looks like you are trying to use a distribution that is totally badass";
     	helpMessage[1] = "Yeah obviously";
     	helpMessage[2] = "What's it to you?";
     	helpMessage[3] = "But it's not Linux";
-    	sammyImgUrl = "https://www.dropbox.com/sh/bhwdrskdozet760/AAB0SBQ6mojq_KKGytXg-dWka/Devil-Sammy.png";
+    	sammyImgUrl = "http://i.imgur.com/CVa27Tb.png";
     }
 
-    helpMessage[0] = "It looks like you're trying to set up Wordpress on a 512mb droplet";
 		var helpMessageHTML = 
-		"<div id='helpMessageHTML' style='position: fixed; left: 30px; background: yellow; border-radius: 5px; border: 1px solid black;'>"
+		"<div id='helpMessageHTML' style='position: fixed; top: 30px; z-index:99999; background: yellow; border-radius: 5px; border: 1px solid black;'>"
 		+ "<div id='question'>" + helpMessage[0] + "</div>"
 		+ "<div id='option1'>" + helpMessage[1] + "</div>"
 		+ "<div id='option2'>" + helpMessage[2] + "</div>"
@@ -153,6 +152,8 @@ javascript:
                         }
                     }
 
+	/* lolol we could have been using jQuery all along lol what */
+
                 });
             
             $('#images-freebsd').click(function(){
@@ -167,7 +168,7 @@ javascript:
             });
             
             $('#create-btn').click(function(){
-               checkStatus(); 
+               console.log('Create.');
             });
             $('.feedback').mouseover(function(){
                 displaySammy(3);
