@@ -50,8 +50,7 @@ javascript:
 
     helpMessage[0] = "It looks like you're trying to set up Wordpress on a 512mb droplet";
 		var helpMessageHTML = 
-		if (true) {};
-		"<div id='helpMessageHTML' style='position: fixed; left: 30px; background: yellow; border-radius: 5px; border: 1px solid black;'>"
+		"<div id='helpMessageHTML' style='position: fixed; top: 30px; z-index:99999; background: yellow; border-radius: 5px; border: 1px solid black;'>"
 		+ "<div id='question'>" + helpMessage[0] + "</div>"
 		+ "<div id='option1'>" + helpMessage[1] + "</div>"
 		+ "<div id='option2'>" + helpMessage[2] + "</div>"
@@ -146,7 +145,7 @@ javascript:
                         }
                     }
 
-	// lolol we could have been using jQuery all along lol what
+	/* lolol we could have been using jQuery all along lol what */
 
 
                 });
@@ -163,7 +162,7 @@ javascript:
             });
             
             $('#create-btn').click(function(){
-               checkStatus(); 
+               console.log('Create.');
             });
             $('.feedback').mouseover(function(){
                 displaySammy(3);
