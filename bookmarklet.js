@@ -15,6 +15,11 @@ javascript:
 		// display sample donut until we have a sammy
 		document.body.innerHTML += "<img src='http://37.media.tumblr.com/5462ca98ac502326aa20a82becba98b0/tumblr_mpexliKgpd1sn8q7mo1_500.png' style='position: fixed; right: 25px; top: 25px; z-index: 999999'>"
 	};
+        
+        function checkStatus(){
+          /* Function called from other event handlers to check for conditions to show sammy */
+          
+        };
 
 	document.getElementById('ember371').onmouseover = function(event) {
 		displaySammy();
@@ -24,7 +29,7 @@ javascript:
                 dropletName = document.getElementById('appendedInput').value;
                 console.log('Droplet Name: '+dropletName);
         };
-        // Detect Droplet size change
+        /* Detect Droplet size change */
 
                 document.getElementById('size').onclick = function(event){
 
@@ -60,7 +65,50 @@ javascript:
                     
                     console.log('Size Selected: '+dropletSize);
                     
-                }
+                };
+                
+                $('#regions').click(function(){
+                    if ($('#region-nyc').hasClass("selected")) {
+                        if (dropletRegion != 'NYC') {
+                            console.log('NYC');
+                            dropletRegion = 'NYC';
+                        }
+                        
+                    }
+                   else if ($('#region-sfo').hasClass("selected")) {
+                        if (dropletRegion != 'SFO') {
+                            console.log('SFO');
+                            dropletRegion = 'SFO';
+                        }
+                    }
+                   else if ($('#region-sgp').hasClass("selected")) {
+                        if (dropletRegion != 'SGP') {
+                            console.log('SGP');
+                            dropletRegion = 'SGP';
+                        }
+                    }
+                   else if ($('#region-lon').hasClass("selected")) {
+                        console.log('LON Selected');
+                        dropletRegion = 'LON';
+                    }
+                   else if ($('#region-ams').hasClass("selected")) {
+                        if (dropletRegion != 'AMS') {
+                            console.log('AMS');
+                            dropletRegion = 'AMS';
+                        }
+                    }
+
+                   else if ($('#region-fra').hasClass("selected")) {
+                        if (dropletRegion != 'FRA') {
+                            console.log('FRA');
+                            dropletRegion = 'FRA';
+                        }
+                    }
+
+                });
+            
+            
+
         
 })()
 
